@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        input {
+            border: none;
+            background: none;
+            margin: 1rem 0;
+            height: 30px;
+            border-radius: 10rem;
+            padding: 0.5rem 1.5rem;
+            background: lightcoral;
+        }
+
+        #output {
+            height: 500px;
+            aspect-ratio: 1;
+            margin: 0 auto;
+            background: lightblue;
+            color: white;
+            border-radius: 5rem;
+            text-align: center;
+            display: grid;
+            place-items: center;
+            font-size: 3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript program to print patterns</h1>
+        <input type="text" id="user" placeholder="Enter any number">
+        <div id="output"></div>
+    </div>
+
+    <script>
+        let output = document.getElementById('output')
+        let user = document.getElementById('user')
+
+        function patternPrint() {
+            let k = user.value
+            k = parseInt(k)
+            let temp = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    temp += k + " "
+                    k++
+                }
+                temp += "<br>"
+            }
+            output.innerHTML = temp
+        }
+
+        user.addEventListener("keyup", patternPrint)
+
+    </script>
+</body>
+</html>
